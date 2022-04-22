@@ -1,0 +1,102 @@
+body {
+   background: rgb(0, 0, 0);
+   background-image: url("gamepad.jpg");
+   background-size: cover;
+}
+table {
+    text-align: center;
+    position: relative;
+    border-collapse: collapse; 
+    background-color: #f6f6f6;
+}/* Spacing */
+td, th {
+    border: 1px solid #999;
+    padding: 20px;
+}
+th {
+    background: brown;
+    color: white;
+    border-radius: 0;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
+.primary{
+    background-color: #000000
+}
+tfoot > tr  {
+    background: black;
+    color: white;
+}
+tbody > tr:hover {
+    background-color: #ffc107;
+}
+.subscribe {
+    margin: 50 auto;
+    width: 500px;
+    height: 60px;
+    background: #090909;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid rgba(66,66,66,.7);
+}
+.subinp {
+  width: 70%;
+  height: 90%;
+  margin: auto auto auto 20px;
+  background: inherit;
+  font-size: 1.1em;
+  font-family: sans-serif;
+  color: #d8dde2;
+  border: 0 solid #fefefe;
+  border-bottom: 2px;
+}
+.subtn {
+    border: none;
+    background: #1c1a1a;
+    width: 120px;
+    height: 100%;
+    border-radius: 30px;
+    font-size: 1em;
+    color: #3d83db;
+    font-weight: 700;
+    font-family: sans-serif;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.subtn:hover {
+  animation-name: background-color;
+  animation-duration: 500ms;
+}
+@keyframes background-color {
+  100% {
+    background-color: #4791d0;
+  }
+}
+header {
+  background-color: hsl(180, 90%, 35%);
+  color: #FFFFFF;
+  text-align: center;
+}
+nav {
+  background-color: hsl(180, 80%, 25%);
+}
+h1 {
+  text-indent: 10px;
+  padding-top: 10px;
+}
+nav ul {
+  margin: 0px;
+  padding: 5px 0px 5px 30px;
+}
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

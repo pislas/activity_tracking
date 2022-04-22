@@ -1,1 +1,1 @@
-# activity_tracking
+Proyecto para aprender Golang.

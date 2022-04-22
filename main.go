@@ -1,12 +1,9 @@
 package main
 
 import (
-	"net/http"
+	"fmt"
 )
 
 func main() {
-	srv := &http.Server{
-		Addr: ":8080",
-	}
-	srv.ListenAndServe()
+	fmt.Println("Hello World!")
 }

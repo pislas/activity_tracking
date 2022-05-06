@@ -15,6 +15,6 @@ import (
 
 func main() {
 	fs := http.FileServer(http.Dir("./templates"))
-	http.Handle("/", fs)
+	http.Handle("/static/", http.StripPrefix("/static", fs))
 	http.ListenAndServe(":8081", nil)
 }

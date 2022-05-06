@@ -4,29 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login | CTJF</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-      <h1>Clasifica Tus Juegos Favoritos!</h1>
-        <nav>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Creacion</a></li>
-            <li><a href="#">Actualizacion</a></li>
-          </ul>
-        </nav>
-    </header>
-        <form action="#">
-          <input type="text" placeholder="Usuario"><button type="text">✔</button>
-        </form>
-        <form action="#">
-          <input type="text" placeholder="Contraseña"><button type="text">✔</button>
-        </form>
-      <div class="subscribe">
-          <input id="emailinput" class="subinp" type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="ingrese su correo electronico">
-          <button class="subtn">Enviar Suscripcion</button>
-      </div>
+  <div class="login-box">
+    <img class= "avatar" src="../imagenes/logoctjf2.png" alt="Logo CTJF">
+    <h1>Login here</h1>
+    <form>
+    <!--Username-->
+    <label for="username">Username</label>
+    <input type="text" placeholder="enter email or username">
+    <!--Pasword-->
+    <label for="pasword">Pasword</label>
+    <input type="text" placeholder="enter pasword">
+    <input type="submit" value="Log In">
+    <a href="#">Forgot your password?</a><br>
+    <a href="#">Register Here!</a>
+    </form>
+  </div>
 </body>
 </html>

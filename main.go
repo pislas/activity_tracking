@@ -29,6 +29,11 @@ func login(writer http.ResponseWriter, request *http.Request) {
 		Password: request.FormValue("password"),
 	} */
 	username := request.FormValue("username")
+	password := request.FormValue("password")
+	if password != "123" {
+		fmt.Fprintf(writer, "Password invalido!")
+		return
+	}
 	fmt.Fprintf(writer, "Bienvenido, %s!", username)
 }
 

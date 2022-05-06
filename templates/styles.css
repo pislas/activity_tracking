@@ -3,7 +3,7 @@ body {
   height: 30%;
   margin: 0 auto;
   background: rgb(0, 0, 0);
-  background-image: url(../imagenes/gamepad.jpg);
+  background-image: url(/static/imagenes/gamepad.jpg);
   background-size: cover;
   font-family: sans-serif;
 }

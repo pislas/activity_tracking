@@ -21,7 +21,7 @@ import (
 
 func login(writer http.ResponseWriter, request *http.Request) {
 	if request.Method != http.MethodPost {
-		fmt.Fprintf(writer, "No se recibió el form!")
+		fmt.Fprintf(writer, "Debe ser un metodo Post")
 		return
 	}
 	/* loginForm := LoginForm{

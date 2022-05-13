@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/pislas/activity_tracking/users"
 )
 
 // func handler(writer http.ResponseWriter, request *http.Request) {
@@ -38,8 +40,10 @@ func login(writer http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
+
 	fs := http.FileServer(http.Dir("./templates"))
 	http.Handle("/static/", http.StripPrefix("/static", fs))
 	http.HandleFunc("/login", login)
+	http.HandleFunc("/register", users.Register)
 	http.ListenAndServe(":8081", nil)
 }

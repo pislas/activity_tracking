@@ -41,5 +41,6 @@ func main() {
 	fs := http.FileServer(http.Dir("./templates"))
 	http.Handle("/static/", http.StripPrefix("/static", fs))
 	http.HandleFunc("/login", login)
+	http.HandleFunc("/register", login)
 	http.ListenAndServe(":8081", nil)
 }

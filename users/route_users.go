@@ -21,5 +21,5 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 		Password: request.PostFormValue("password"),
 	}
 	user = UsersDb.Insert(user)
-	fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", user.Id, user.Username)
+	fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", len(UsersDb.users), user.Username)
 }

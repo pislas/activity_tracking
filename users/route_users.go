@@ -32,12 +32,13 @@ func Login(writer http.ResponseWriter, request *http.Request) {
 	username := request.FormValue("username")
 	u, error := UsersDb.FindUser(username)
 	if error != nil {
-		//fmt.Printf("error: %v\n", error)
-		fmt.Fprintf(writer, "Usuario invalido")
+		writer.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(writer, "error: %v\n", error)
 		return
 	}
 	password := request.FormValue("password")
 	if password != u.Password {
+		writer.WriteHeader(http.StatusBadRequest)
 		fmt.Fprintf(writer, "Password invalido!")
 		return
 	}

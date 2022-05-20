@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/pislas/activity_tracking/users"
@@ -21,15 +22,15 @@ import (
 	Password string
 } */
 
-func login(writer http.ResponseWriter, request *http.Request) {
+/* func login(writer http.ResponseWriter, request *http.Request) {
 	if request.Method != http.MethodPost {
 		fmt.Fprintf(writer, "Debe ser un metodo Post")
 		return
 	}
-	/* loginForm := LoginForm{
+	loginForm := LoginForm{
 		UserName: request.FormValue("username"),
 		Password: request.FormValue("password"),
-	} */
+	}
 	username := request.FormValue("username")
 	password := request.FormValue("password")
 	if password != "123" {
@@ -37,13 +38,17 @@ func login(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 	fmt.Fprintf(writer, "Bienvenido, %s!", username)
-}
+} */
 
 func main() {
 
 	fs := http.FileServer(http.Dir("./templates"))
 	http.Handle("/static/", http.StripPrefix("/static", fs))
-	http.HandleFunc("/login", login)
+	http.HandleFunc("/login", users.Login)
 	http.HandleFunc("/register", users.Register)
-	http.ListenAndServe(":8081", nil)
+
+	fmt.Printf("Starting server at port 8081\n")
+	if err := http.ListenAndServe(":8081", nil); err != nil {
+		log.Fatal(err)
+	}
 }

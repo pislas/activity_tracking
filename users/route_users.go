@@ -16,7 +16,7 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 	user := User{
-		Id:       uint64(len(UsersDb.users)),
+		//Id:       uint64(len(UsersDb.users)),
 		Username: request.PostFormValue("username"),
 		Password: request.PostFormValue("password"),
 	}

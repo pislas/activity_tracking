@@ -30,8 +30,14 @@ func Login(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 	username := request.FormValue("username")
+	u, error := UsersDb.FindUser(username)
+	if error != nil {
+		//fmt.Printf("error: %v\n", error)
+		fmt.Fprintf(writer, "Usuario invalido")
+		return
+	}
 	password := request.FormValue("password")
-	if password != "123" {
+	if password != u.Password {
 		fmt.Fprintf(writer, "Password invalido!")
 		return
 	}

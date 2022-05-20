@@ -20,7 +20,9 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 		Username: request.PostFormValue("username"),
 		Password: request.PostFormValue("password"),
 	}
+	fmt.Printf("Usuario creado %v", user)
 	user = UsersDb.Insert(user)
+	fmt.Printf("Usuario insertado %v", user)
 	fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", len(UsersDb.users), user.Username)
 }
 

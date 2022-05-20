@@ -23,3 +23,17 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 	user = UsersDb.Insert(user)
 	fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", len(UsersDb.users), user.Username)
 }
+
+func Login(writer http.ResponseWriter, request *http.Request) {
+	if request.Method != http.MethodPost {
+		fmt.Fprintf(writer, "Debe ser un metodo Post")
+		return
+	}
+	username := request.FormValue("username")
+	password := request.FormValue("password")
+	if password != "123" {
+		fmt.Fprintf(writer, "Password invalido!")
+		return
+	}
+	fmt.Fprintf(writer, "Bienvenido, %s!", username)
+}

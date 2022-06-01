@@ -20,7 +20,6 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 		Username: request.PostFormValue("username"),
 		Password: request.PostFormValue("password"),
 	}
-<<<<<<< HEAD
 	duplicate := request.PostFormValue("username")
 	for _, name := range UsersDb.users {
 		if name.Username == duplicate {
@@ -28,9 +27,6 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 			return
 		}
 	}
-=======
-	fmt.Printf("Usuario creado %v", user)
->>>>>>> 2f8dc5966039648f8606a223e188f02f55dba21e
 	user = UsersDb.Insert(user)
 	fmt.Printf("Usuario insertado %v", user)
 	fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", len(UsersDb.users), user.Username)

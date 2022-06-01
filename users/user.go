@@ -6,14 +6,14 @@ import (
 
 var UsersDb *Users
 
+type Users struct {
+	users []User
+}
+
 type User struct {
 	Id       uint64
 	Username string
 	Password string
-}
-
-type Users struct {
-	users []User
 }
 
 func init() {

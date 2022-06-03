@@ -27,8 +27,8 @@ func (s *Users) Insert(u User) User {
 }
 
 func (s *Users) FindUser(username string) (*User, error) {
-	for i, u := range s.users {
-		fmt.Printf("Indice %d => %v", i, u)
+	for _, u := range s.users {
+		//fmt.Printf("Indice %d => %v", i, u)
 		if u.Username == username {
 			return &u, nil
 		}

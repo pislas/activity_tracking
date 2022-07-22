@@ -27,11 +27,24 @@ func (s *Users) Insert(u User) User {
 }
 
 func (s *Users) FindUser(username string) (*User, error) {
-	for _, u := range s.users {
+	for i, u := range s.users {
 		//fmt.Printf("Indice %d => %v", i, u)
 		if u.Username == username {
-			return &u, nil
+			return &s.users[i], nil
 		}
 	}
 	return nil, fmt.Errorf("usuario %s invalido", username)
 }
+
+func (s *Users) GetUser(id uint64) (*User, error) {
+	for i, u := range s.users {
+		if u.Id == id {
+			return &s.users[i], nil
+		}
+	}
+	return nil, fmt.Errorf("id de usuario %v invalido", id)
+}
+
+/* func (s *Users) UpdateUser(id uint64, username string, password string) (User, error) {
+	_, u := UsersDb.GetUser(id)
+} */

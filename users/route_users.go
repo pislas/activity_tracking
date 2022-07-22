@@ -2,6 +2,7 @@ package users
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 )
 
@@ -56,5 +57,12 @@ func Login(writer http.ResponseWriter, request *http.Request) {
 		fmt.Fprintf(writer, "Password invalido!")
 		return
 	}
-	fmt.Fprintf(writer, "Bienvenido, %s!", username)
+	//fmt.Fprintf(writer, "Bienvenido, %s!", username)
+	t, error := template.ParseFiles("users/templates/welcome.html")
+	if error != nil {
+		fmt.Fprintf(writer, "error: %v\n", error)
+		return
+	}
+	t.Execute(writer, u)
+
 }

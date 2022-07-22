@@ -36,7 +36,13 @@ func Register(writer http.ResponseWriter, request *http.Request) {
 	   	} */
 	user = UsersDb.Insert(user)
 	//fmt.Printf("Usuario insertado %v", user)
-	fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", len(UsersDb.users), user.Username)
+	//fmt.Fprintf(writer, "Usuario Registrado nro: %d, Bienvenido %s!", len(UsersDb.users), user.Username)
+	t, error := template.ParseFiles("users/templates/welcome.html")
+	if error != nil {
+		fmt.Fprintf(writer, "error: %v\n", error)
+		return
+	}
+	t.Execute(writer, user)
 }
 
 func Login(writer http.ResponseWriter, request *http.Request) {
